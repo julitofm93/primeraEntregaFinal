@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Libro",
+        "descripcion": "Esto es un libro",
+        "codigo": "123",
+        "precio": "120",
+        "stock": "2",
+        "thumbnail": "http://localhost:8080/images/1639098650711image.jpg",
+        "timestamp": "9/12/2021 22:10:50"
+      },
+      {
+        "id": 2,
+        "nombre": "Escuadra",
+        "descripcion": "Esto es una escuadra",
+        "codigo": "456",
+        "precio": "50",
+        "stock": "2",
+        "thumbnail": "http://localhost:8080/images/1639098690868image.jpg",
+        "timestamp": "9/12/2021 22:11:30"
+      },
+      {
+        "id": 3,
+        "nombre": "Lapiz",
+        "descripcion": "Esto es un lapiz",
+        "codigo": "789",
+        "precio": "5",
+        "stock": "2",
+        "thumbnail": "http://localhost:8080/images/1639098717974image.jpg",
+        "timestamp": "9/12/2021 22:11:57"
+      }
+    ],
+    "timestamp": "9/12/2021 22:14:01"
+  }
+]
