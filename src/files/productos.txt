@@ -21,12 +21,12 @@
   },
   {
     "id": 3,
-    "nombre": "Lapiz",
-    "descripcion": "Esto es un lapiz",
-    "codigo": "789",
-    "precio": "5",
-    "stock": "2",
-    "thumbnail": "http://localhost:8080/images/1639098717974image.jpg",
-    "timestamp": "9/12/2021 22:11:57"
+    "nombre": "Juancito",
+    "descripcion": "escudras12",
+    "codigo": "1232",
+    "precio": "12312321",
+    "stock": "12312",
+    "thumbnail": "http://localhost:8080/images/1641500213994image.jpg",
+    "timestamp": "6/1/2022 17:16:54"
   }
 ]

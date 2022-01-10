@@ -1,11 +1,10 @@
 //DEPENDENCIAS
 import express from 'express';
 import cors from 'cors'
-import Productos from './classes/productos.js'
 import productosRouter from './routes/productos.js'
 import carritosRouter from './routes/carrito.js'
 import upload from './services/upload.js'
-import Carritos from './classes/carrito.js';
+import {carritos} from './daos/index.js';
 import __dirname from './utils.js';
 const app = express();
 
@@ -16,17 +15,6 @@ const server = app.listen(8080,()=>{
 })
 
 
-const productos = new Productos();
-const carritos = new Carritos()
-
-
-app.use(express.json());
-app.use(express.urlencoded({extended:true}))
-app.use(cors());
-app.use(express.static(__dirname+'public'))
-app.use('/api/productos',productosRouter);
-app.use('/api/carritos',carritosRouter)
-
 const admin = true;
 
 app.use((req,res,next)=>{
@@ -35,6 +23,14 @@ app.use((req,res,next)=>{
     next()
 })
 
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+app.use(cors());
+app.use(express.static(__dirname+'public'))
+app.use('/api/productos',productosRouter);
+app.use('/api/carritos',carritosRouter)
+
+
 
 app.post('/api/uploadfile',upload.single('file'),(req,res)=>{
     const file = req.file;
@@ -42,5 +38,14 @@ app.post('/api/uploadfile',upload.single('file'),(req,res)=>{
         res.status(500).send({message:"No se subio ningun archivo"})
     }
     res.send(file);
+})
+
+//POST - Agrega un producto a un carrito
+app.post('/api/addProd', (req, res) => {
+    let cartId = req.body.cid;
+    let prodId = req.body.pid;
+    carritos.addProducto(cartId,prodId).then(result =>{
+        res.send(result);   
+    })
 })
 
